@@ -38,22 +38,28 @@ if(checkdate(2,29,1962))
 
 $dateb=mktime(0, 0, 0, 3, 3, 1993);
 setlocale(LC_TIME, "fr_FR");
-echo "le 3 mars 1993 était un " .strftime("%A", date($dateb));
+echo "le 3 mars 1993 était un " .strftime("%A", date($dateb))."<br><br><br>";
 
 // Exercice 5
 
-// afficher toutes les années entre 2005 et 2052
-// afficher si elle est bisextile ou pas
-//https://www.tutorialspoint.com/php-program-to-check-if-a-year-is-leap-year-or-not#:~:text=php%20function%20year_check(%24my_year)%7B,year_check(%24my_year)%3B%20%3F%3E
 
-function checkYear($startDay, $endDay){
-    $startDay=
-
+function checkYear($myYear){
+    if ($myYear % 400 == 0)
+   echo $myYear." est une année bissextile <br> <br> <br>";
+ else if ($myYear % 100 == 0)
+ echo $myYear." n'est pas une année bissextile <br> <br> <br>";
+ else if ($myYear % 4 == 0)
+ echo $myYear." est une année bissextile <br> <br> <br>";
+ else
+ echo $myYear." n'est pas une année bissextile <br> <br> <br>";
 }
 
 
-for($i=2005; $i<2052; $i++){
 
+for($myYear=2005; $myYear<2052; $myYear++){
+    checkYear($myYear);
 }
+
+// Exercice 6
 
 ?>
